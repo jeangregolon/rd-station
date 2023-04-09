@@ -1,0 +1,15 @@
+:root {
+  --dark-blue: #0b485b;
+  --medium-blue: #19c1ce;
+  --light-blue: #07e5eb;
+  --gold: #f2bf4e;
+  --light-gold: #f4ca6d;
+  --black: #000000;
+  --black-hover: rgba(0, 0, 0, 0.16);
+  --darker-gray: #212429;
+  --dark-gray: #7e8a98;
+  --medium-gray: #97a1ac;
+  --light-gray: #cfd3d8;
+  --lighter-gray: #f1f3f5;
+  --white: #ffffff;
+}

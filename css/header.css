@@ -1,0 +1,168 @@
+@import url("constants.css");
+
+.header {
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background: var(--white);
+  padding: 0 108px;
+  max-width: 1366px;
+}
+
+.logo > img {
+  width: 174px;
+}
+
+nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+nav li {
+  margin: 0 10px;
+  height: 100%;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0 32px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  height: 100%;
+  color: var(--darker-gray);
+  display: flex; /* adiciona display flex para o elemento a ocupar toda a altura */
+  align-items: center; /* centraliza o texto verticalmente */
+  height: 100%;
+}
+
+nav button {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--darker-gray);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  height: 36px;
+  margin-left: 16px;
+}
+
+button.primary {
+  background: var(--medium-blue);
+  border: none;
+}
+
+button:hover.primary {
+  background: var(--light-blue);
+}
+
+button.secondary {
+  background: var(--white);
+  border: 2px solid var(--black);
+}
+
+button:hover.secondary {
+  background: var(--black-hover);
+}
+
+button.highlighted {
+  width: 118px;
+  height: 40px;
+  background: var(--gold);
+  border: none;
+}
+
+button:hover.highlighted {
+  background: var(--light-gold);
+}
+
+.dropdown {
+  position: relative; /* Define o contexto de posicionamento para o submenu */
+}
+.submenu {
+  display: none;
+  align-items: start;
+  justify-content: space-between;
+  position: absolute;
+  top: 85%;
+  left: 0;
+  background-color: #fff;
+  padding: 0;
+  margin-top: 10px;
+  padding: 0 24px;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+  width: 799px;
+  height: 195px;
+  box-shadow: 0px 8px 18px rgba(33, 36, 41, 0.16);
+  border-radius: 2px;
+}
+
+.dropdown:hover .submenu {
+  display: flex;
+}
+
+.submenu-column ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu-column li {
+  margin: 0;
+}
+
+.submenu-column a {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #212429;
+  text-align: start;
+  padding: 0 0 16px 0;
+}
+
+.submenu-title {
+  font-family: "Darker Grotesque";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: var(--medium-blue);
+  border-bottom: 1px solid #cfd3d8;
+  padding-bottom: 16px;
+}
