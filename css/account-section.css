@@ -1,0 +1,57 @@
+div.account-section {
+  max-width: 1224px;
+  height: 396px;
+  margin: 0 auto;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+div.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-image: url('/assets/graphs.png');
+  background-size: 300%;
+  background-position: center;
+}
+
+div.image > div {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+}
+
+div.image h1 {
+  font-family: 'Darker Grotesque';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 100%;
+  text-align: center;
+  color: #ffffff;
+  max-width: 500px;
+  margin: 0 0 24px;
+}
+
+div.image p {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #ffffff;
+  max-width: 800px;
+  margin: 0 0 40px;
+}
+
+div.image a {
+  text-decoration: none;
+}

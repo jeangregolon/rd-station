@@ -10,25 +10,41 @@ function includeHTML(element, url) {
   xhr.send();
 }
 
-// Inclui o componente de cabeçalho
 const headerElement = document.querySelector('header');
 if (headerElement) {
   includeHTML(headerElement, 'components/header.html');
 }
 
-// Inclui o componente de recursos
-const featuresElement = document.querySelector('#form-section');
-if (featuresElement) {
-  includeHTML(featuresElement, 'components/form-section.html');
+const formElement = document.querySelector('#form-section');
+if (formElement) {
+  includeHTML(formElement, 'components/form-section.html');
 }
 
-// Inclui o componente de preços
-const pricingElement = document.querySelector('#pricing');
-if (pricingElement) {
-  includeHTML(pricingElement, 'components/pricing.html');
+const resultsElement = document.querySelector('#results-section');
+if (resultsElement) {
+  includeHTML(resultsElement, 'components/results-section.html');
 }
 
-// Inclui o componente de rodapé
+const cardsElement = document.querySelector('#cards-section');
+if (cardsElement) {
+  includeHTML(cardsElement, 'components/cards-section.html');
+}
+
+const accountElement = document.querySelector('#account-section');
+if (accountElement) {
+  includeHTML(accountElement, 'components/account-section.html');
+}
+
+const videoElement = document.querySelector('#video-section');
+if (videoElement) {
+  includeHTML(videoElement, 'components/video-section.html');
+}
+
+const toolsElement = document.querySelector('#tools-section');
+if (toolsElement) {
+  includeHTML(toolsElement, 'components/tools-section.html');
+}
+
 const footerElement = document.querySelector('footer');
 if (footerElement) {
   includeHTML(footerElement, 'components/footer.html');
