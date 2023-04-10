@@ -1,7 +1,11 @@
-@import url("constants.css");
+@import url('constants.css');
 
 .header {
   border-bottom: 1px solid var(--light-gray);
+}
+
+header.open {
+  height: 100%;
 }
 
 .header-container {
@@ -24,6 +28,12 @@ nav {
   align-items: center;
 }
 
+.mobile-menu.open nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -34,28 +44,53 @@ nav ul {
   height: 100%;
 }
 
+.mobile-menu.open > nav > ul {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+}
+
 nav li {
-  margin: 0 10px;
+  margin: 0;
   height: 100%;
+}
+
+.mobile-menu > nav > ul > li {
+  padding: 16px 0;
+  border-bottom: 1px solid #cfd3d8;
+  margin: 0 16px;
+}
+
+.mobile-menu > nav > ul > li:last-child {
+  border-bottom: none;
 }
 
 nav a {
   text-decoration: none;
   padding: 0 32px;
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 100%;
   height: 100%;
   color: var(--darker-gray);
-  display: flex; /* adiciona display flex para o elemento a ocupar toda a altura */
-  align-items: center; /* centraliza o texto verticalmente */
+  display: flex;
+  align-items: center;
   height: 100%;
 }
 
+.mobile-menu.open.dropdown {
+  display: block;
+}
+
+.drop-item {
+  display: flex;
+  justify-content: space-between;
+}
+
 nav button {
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 800;
   font-size: 14px;
@@ -105,7 +140,7 @@ button:hover.highlighted {
 }
 
 .dropdown {
-  position: relative; /* Define o contexto de posicionamento para o submenu */
+  position: relative;
 }
 .submenu {
   display: none;
@@ -113,8 +148,9 @@ button:hover.highlighted {
   justify-content: space-between;
   position: absolute;
   top: 85%;
-  left: 0;
-  background-color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white);
   padding: 0;
   margin-top: 10px;
   padding: 0 24px;
@@ -138,6 +174,7 @@ button:hover.highlighted {
   align-items: start;
   padding: 0;
   margin: 0;
+  white-space: nowrap;
 }
 
 .submenu-column li {
@@ -145,24 +182,108 @@ button:hover.highlighted {
 }
 
 .submenu-column a {
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color: #212429;
+  color: var(--darker-gray);
   text-align: start;
   padding: 0 0 16px 0;
+  white-space: nowrap;
 }
 
 .submenu-title {
-  font-family: "Darker Grotesque";
+  font-family: 'Darker Grotesque';
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
   color: var(--medium-blue);
-  border-bottom: 1px solid #cfd3d8;
+  border-bottom: 1px solid var(--light-gray);
   padding-bottom: 16px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger span {
+  border-radius: 5px;
+  display: none;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 5px;
+  background-color: var(--medium-blue);
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.button-wrapper {
+  background: #f1f3f5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 28px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.button-wrapper.open {
+  position: initial;
+}
+
+.submenu-mobile {
+  display: none;
+}
+
+.submenu-mobile.open {
+  display: block;
+}
+
+@media (max-width: 1365px) {
+  .header-container {
+    padding: 0 54px;
+    max-width: 1366px;
+  }
+
+  nav a {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .header-container {
+    max-width: 100%;
+  }
+
+  nav {
+    display: none;
+  }
+  .hamburger {
+    display: inline-block;
+  }
+
+  .hamburger span {
+    display: block;
+  }
+
+  .header-container {
+    padding: 0 16px;
+    height: 64px;
+  }
+
+  .logo > img {
+    width: 136px;
+  }
 }
