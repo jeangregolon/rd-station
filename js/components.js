@@ -6,30 +6,30 @@ function includeHTML(element, url) {
       element.innerHTML = xhr.responseText;
     }
   };
-  xhr.open("GET", url, true);
+  xhr.open('GET', url, true);
   xhr.send();
 }
 
 // Inclui o componente de cabeçalho
-const headerElement = document.querySelector("header");
+const headerElement = document.querySelector('header');
 if (headerElement) {
-  includeHTML(headerElement, "components/header.html");
+  includeHTML(headerElement, 'components/header.html');
 }
 
 // Inclui o componente de recursos
-const featuresElement = document.querySelector("#features");
+const featuresElement = document.querySelector('#form-section');
 if (featuresElement) {
-  includeHTML(featuresElement, "components/features.html");
+  includeHTML(featuresElement, 'components/form-section.html');
 }
 
 // Inclui o componente de preços
-const pricingElement = document.querySelector("#pricing");
+const pricingElement = document.querySelector('#pricing');
 if (pricingElement) {
-  includeHTML(pricingElement, "components/pricing.html");
+  includeHTML(pricingElement, 'components/pricing.html');
 }
 
 // Inclui o componente de rodapé
-const footerElement = document.querySelector("footer");
+const footerElement = document.querySelector('footer');
 if (footerElement) {
-  includeHTML(footerElement, "components/footer.html");
+  includeHTML(footerElement, 'components/footer.html');
 }
