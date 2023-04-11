@@ -37,33 +37,37 @@ const cardsData = [
   },
 ];
 
-window.onload = function () {
+function renderCards() {
   const cardsContainer = document.getElementById('cards');
-  console.log('cards');
-  // Use o loop for para iterar sobre o objeto e renderizar cada card com as informações correspondentes
-  for (let i = 0; i < cardsData.length; i++) {
-    // Crie um elemento de card
-    const card = document.createElement('div');
-    card.classList.add('card');
+  if (
+    cardsContainer &&
+    (cardsContainer.offsetWidth > 0 || cardsContainer.offsetHeight > 0)
+  ) {
+    for (let i = 0; i < cardsData.length; i++) {
+      const card = document.createElement('div');
+      card.classList.add('card');
 
-    // Adicione as informações ao card
-    const imageBg = document.createElement('div');
-    imageBg.classList.add('image-bg');
-    card.appendChild(imageBg);
+      const imageBg = document.createElement('div');
+      imageBg.classList.add('image-bg');
+      card.appendChild(imageBg);
 
-    const cardImage = document.createElement('img');
-    cardImage.src = cardsData[i].image;
-    imageBg.appendChild(cardImage);
+      const cardImage = document.createElement('img');
+      cardImage.src = cardsData[i].image;
+      imageBg.appendChild(cardImage);
 
-    const cardTitle = document.createElement('h2');
-    cardTitle.textContent = cardsData[i].title;
-    card.appendChild(cardTitle);
+      const cardTitle = document.createElement('h2');
+      cardTitle.textContent = cardsData[i].title;
+      card.appendChild(cardTitle);
 
-    const cardDescription = document.createElement('p');
-    cardDescription.textContent = cardsData[i].description;
-    card.appendChild(cardDescription);
+      const cardDescription = document.createElement('p');
+      cardDescription.textContent = cardsData[i].description;
+      card.appendChild(cardDescription);
 
-    // Adicione o card ao elemento contenedor
-    cardsContainer.appendChild(card);
+      cardsContainer.appendChild(card);
+    }
+  } else {
+    window.requestAnimationFrame(renderCards);
   }
-};
+}
+
+renderCards();
