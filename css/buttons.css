@@ -18,6 +18,7 @@ button {
   padding: 8px 16px;
   gap: 8px;
   height: 36px;
+  cursor: pointer;
 }
 
 button.space-left {

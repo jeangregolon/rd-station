@@ -18,6 +18,16 @@ div.video-section {
   max-width: 390px;
 }
 
+.video-section h2 {
+  font-family: 'Darker Grotesque';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 110%;
+  color: #212429;
+  margin-bottom: 40px;
+}
+
 div.thumbnail {
   background: url('/assets/img-video-thumbnail.jpg') center no-repeat;
   width: 649px;
