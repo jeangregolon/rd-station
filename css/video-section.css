@@ -1,8 +1,4 @@
 div.video-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   background: linear-gradient(
     0deg,
     var(--white) 7%,
@@ -10,21 +6,22 @@ div.video-section {
     var(--lighter-gray) 86%,
     var(--white) 7%
   );
+}
+
+.video-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
 }
 
-.video-section > div:first-child {
-  margin-right: 128px;
+.video-content > div:first-child {
   max-width: 390px;
 }
 
-.video-section h2 {
-  font-family: 'Darker Grotesque';
-  font-style: normal;
-  font-weight: 900;
+.video-content h2 {
   font-size: 32px;
   line-height: 110%;
-  color: #212429;
   margin-bottom: 40px;
 }
 
@@ -37,14 +34,14 @@ div.thumbnail {
   justify-content: center;
 }
 
-.video-section button > img {
+.video-content button > img {
   margin-top: -3px;
 }
 
 div.play-button {
   width: 112px;
   height: 112px;
-  background: #ffffff;
+  background: var(--white);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -69,15 +66,15 @@ div.play-button {
   left: -10px;
   right: -10px;
   bottom: -10px;
-  border: 12px solid #78edf2;
+  border: 12px solid var(--lighter-blue);
 }
 
 .play-button:after {
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  border: 12px solid #78edf2;
+  top: -22px;
+  left: -22px;
+  right: -22px;
+  bottom: -22px;
+  border: 12px solid var(--lighter-blue);
 }
 
 .play-button div:before {
@@ -85,7 +82,7 @@ div.play-button {
   left: -30px;
   right: -30px;
   bottom: -30px;
-  border: 12px solid #78edf2;
+  border: 12px solid var(--lighter-blue);
 }
 
 @keyframes pulse {
@@ -123,7 +120,7 @@ div.play-button {
   overflow: hidden;
   max-width: 1024px;
   width: 100%;
-  background: white;
+  background: var(--white);
   border-radius: 10px;
 }
 
@@ -153,9 +150,9 @@ div.play-button {
 .close-button span {
   font-size: 36px;
   font-weight: bold;
-  color: #555;
+  color: var(--darker-gray);
 }
 
 .close-button:hover span {
-  color: #000;
+  color: var(--black);
 }

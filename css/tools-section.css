@@ -1,25 +1,26 @@
+@import url('constants.css');
+
 div.tools-section {
   padding: 120px 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: start;
 }
 
 .tools-section > div:first-child {
-  max-width: 450px;
+  max-width: 550px;
   margin-right: 90px;
 }
 
 .tools-section h2 {
-  font-family: 'Darker Grotesque';
-  font-style: normal;
-  font-weight: 900;
   font-size: 40px;
   line-height: 100%;
-  color: #212429;
 }
 
 .tools-section p {
   margin: 24px 0 40px;
+  font-size: 20px;
+  line-height: 140%;
 }
 
 div#tools {
@@ -42,11 +43,8 @@ div#tools {
 }
 
 .tool h2 {
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   text-align: center;
-  color: #000000;
+  color: var(--black);
 }

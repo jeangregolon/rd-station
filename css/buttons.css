@@ -1,15 +1,12 @@
 @import url('constants.css');
 
 button {
-  font-family: 'Nunito Sans';
-  font-style: normal;
   font-weight: 800;
   font-size: 14px;
   line-height: 140%;
   text-align: center;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--darker-gray);
 
   display: flex;
   flex-direction: row;
@@ -19,14 +16,27 @@ button {
   gap: 8px;
   height: 36px;
   cursor: pointer;
+  position: relative;
+}
+
+button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  border-top: 4px solid #000;
+  border-left: 8px solid rgba(0, 0, 0, 0);
+  border-right: 8px solid rgba(0, 0, 0, 0);
+  height: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 button.space-left {
   margin-left: 16px;
 }
-
-/* button.account {
-  margin-bottom:;} */
 
 button.primary {
   background: var(--medium-blue);

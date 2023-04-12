@@ -1,3 +1,5 @@
+@import url('constants.css');
+
 div.account-section {
   max-width: 1224px;
   height: 396px;
@@ -29,25 +31,15 @@ div.image > div {
 }
 
 div.image h1 {
-  font-family: 'Darker Grotesque';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 40px;
-  line-height: 100%;
   text-align: center;
-  color: #ffffff;
-  max-width: 500px;
+  color: var(--white);
+  max-width: 550px;
   margin: 0 0 24px;
 }
 
 div.image p {
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
   text-align: center;
-  color: #ffffff;
+  color: var(--white);
   max-width: 800px;
   margin: 0 0 40px;
 }
