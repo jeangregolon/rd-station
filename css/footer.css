@@ -1,5 +1,31 @@
 div.footer {
-  height: 181px;
   width: 100%;
-  background: #19c1ce;
+  background: var(--medium-blue);
+  padding: 40px 0;
+}
+
+div.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--lighter-blue);
+}
+
+.footer-top > img {
+  width: 174px;
+  height: auto;
+}
+
+.footer p {
+  text-align: right;
+  margin-top: 24px;
+}
+
+.footer-top a > img {
+  margin: 0 6px;
+}
+
+.footer p > a {
+  text-decoration: underline;
 }
