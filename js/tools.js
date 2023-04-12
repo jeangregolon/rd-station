@@ -55,7 +55,7 @@ function renderTools() {
       toolImage.src = toolsData[i].image;
       tool.appendChild(toolImage);
 
-      const toolTitle = document.createElement('h2');
+      const toolTitle = document.createElement('p');
       toolTitle.textContent = toolsData[i].title;
       tool.appendChild(toolTitle);
 
