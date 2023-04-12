@@ -13,6 +13,12 @@ div.form-content {
   position: relative;
 }
 
+.oportunities {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 div.oportunities > h2 {
   font-size: 56px;
   line-height: 100%;
@@ -131,4 +137,45 @@ div.together p:not(:last-child) {
   box-shadow: inset 6px 6px 0px #eefbfb;
   background: var(--white);
   padding: 0 12px;
+}
+
+.typing-effect {
+  display: inline-block;
+  text-align: left;
+}
+
+.words-wrapper {
+  display: grid;
+  overflow: hidden;
+  height: 1em;
+  margin: 0;
+}
+
+.word {
+  max-width: max-content;
+  overflow: hidden;
+  height: inherit;
+  word-break: break-all;
+  -webkit-animation: typing 2s linear infinite alternate,
+    change-word 16s steps(4) infinite;
+  animation: typing 2s linear infinite alternate,
+    change-word 16s steps(4) infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes change-word {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
 }
