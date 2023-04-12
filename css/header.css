@@ -14,7 +14,6 @@ header.open {
   justify-content: space-between;
   height: 80px;
   background: var(--white);
-  max-width: 1366px;
 }
 
 .logo > img {
@@ -150,13 +149,31 @@ nav a {
   padding: 10px;
 }
 
-.hamburger span {
+.hamburger span.ham {
   border-radius: 5px;
   display: none;
   width: 30px;
   height: 4px;
   margin-bottom: 5px;
   background-color: var(--medium-blue);
+  animation: ham-to-x 1s ease-in-out forwards;
+}
+
+.hamburger span.x-icon {
+  display: none;
+  animation: x-to-ham 1s ease-in-out forwards;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 5px;
+}
+
+.hamburger.open span.ham {
+  display: none;
+}
+
+.hamburger.open span.x-icon {
+  display: block;
+  margin-top: -18px;
 }
 
 .mobile-menu {
@@ -191,17 +208,12 @@ nav a {
 }
 
 @media (max-width: 1365px) {
-  .header-container {
-    padding: 0 54px;
-    max-width: 1366px;
-  }
-
   nav a {
     padding: 0 16px;
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1365px) {
   .header-container {
     max-width: 100%;
   }
@@ -209,11 +221,21 @@ nav a {
   nav {
     display: none;
   }
+
   .hamburger {
     display: inline-block;
   }
 
-  .hamburger span {
+  .x-icon:before {
+    content: 'x';
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--medium-blue);
+  }
+
+  .hamburger span.ham {
     display: block;
   }
 
@@ -224,5 +246,27 @@ nav a {
 
   .logo > img {
     width: 136px;
+  }
+}
+
+@keyframes ham-to-x {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes x-to-ham {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
