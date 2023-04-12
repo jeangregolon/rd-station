@@ -54,7 +54,7 @@
 }
 
 .results-section li span {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 150%;
 }
 
@@ -65,4 +65,27 @@
 
 .column:last-child {
   max-width: 448px;
+}
+
+@media (max-width: 1365px) {
+  .results-section {
+    padding-top: 40px;
+  }
+
+  .results-content {
+    flex-direction: column-reverse;
+  }
+
+  .results-section h2 {
+    font-size: 24px;
+  }
+
+  .results-section p {
+    font-size: 14px;
+  }
+
+  .results-section img {
+    width: 100%;
+    margin-top: 40px;
+  }
 }
