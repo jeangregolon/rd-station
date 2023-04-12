@@ -24,7 +24,6 @@ div.oportunities > h2 {
   line-height: 100%;
   max-width: 600px;
   padding: 120px 0 40px;
-  margin: 0;
 }
 
 div.oportunities > h2 > span {
@@ -92,10 +91,15 @@ div.together p:not(:last-child) {
   line-height: 120%;
   text-align: center;
   color: var(--dark-gray);
+  padding: 16px 0 24px;
+  border-bottom: 1px solid var(--light-gray);
+  margin-bottom: 24px;
 }
 
 .form-section form ul {
   padding-left: 24px;
+  list-style-type: disc;
+  padding: 24px 35px;
 }
 
 .form-section form ul li {
@@ -124,6 +128,10 @@ div.together p:not(:last-child) {
   margin-bottom: 16px;
 }
 
+div.form-field:last-of-type {
+  margin-bottom: 0;
+}
+
 .form-field label {
   margin-bottom: 8px;
   font-weight: 700;
@@ -137,6 +145,24 @@ div.together p:not(:last-child) {
   box-shadow: inset 6px 6px 0px #eefbfb;
   background: var(--white);
   padding: 0 12px;
+}
+
+.form-field input[type='radio'] {
+  background: none;
+  border: none;
+  box-shadow: none;
+  height: 20px;
+}
+
+div.radio-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+div.radio-button label {
+  font-weight: 400;
+  margin: 0 0 0 5px;
 }
 
 .typing-effect {
@@ -177,5 +203,68 @@ div.together p:not(:last-child) {
   }
   100% {
     transform: translateY(-400%);
+  }
+}
+
+@media (max-width: 1365px) {
+  div.form-section {
+    background: linear-gradient(
+      30deg,
+      var(--lighter-gray) 0,
+      var(--lighter-gray) 95%,
+      var(--white) 5%
+    );
+  }
+
+  .form-section form {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 40px 0px;
+  }
+
+  .form-field {
+    padding: 0 24px;
+  }
+
+  .form-section form button {
+    width: calc(100% - 48px);
+    margin: 0 auto;
+  }
+
+  .form-section form h3 {
+    font-size: 20px;
+    max-width: 300px;
+  }
+
+  .form-section form p {
+    padding: 16px 0 32px;
+    margin: 0 16px 24px 16px;
+  }
+
+  .form-section form ul {
+    padding: 24px 35px;
+  }
+
+  div.oportunities > h2 {
+    padding: 40px 0 24px;
+    font-size: 40px;
+  }
+
+  div.oportunities > p {
+    padding-bottom: 32px;
+  }
+
+  div.together {
+    margin-top: 40px;
+    padding: 48px 0 40px;
+  }
+
+  div.together h3 {
+    font-size: 24px;
+  }
+
+  div.together p {
+    font-size: 16px;
   }
 }
