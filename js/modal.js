@@ -31,10 +31,15 @@ function openModal() {
 
 function closeModal(modal) {
   const closeButton = modal.querySelector('.close-button');
+  const video = modal.querySelector('iframe');
 
   if (modal && closeButton) {
     closeButton.addEventListener('click', () => {
       modal.style.display = 'none';
+      video.contentWindow.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        '*'
+      );
       closeButton.removeEventListener('click', closeModal);
     });
   }

@@ -15,11 +15,8 @@ div.video-section {
   position: relative;
 }
 
-.video-content > div:first-child {
-  max-width: 390px;
-}
-
 .video-content h2 {
+  max-width: 390px;
   font-size: 32px;
   line-height: 110%;
   margin-bottom: 40px;
@@ -155,4 +152,50 @@ div.play-button {
 
 .close-button:hover span {
   color: var(--black);
+}
+
+@media (max-width: 1365px) {
+  div.video-section {
+    background: linear-gradient(
+      0deg,
+      var(--white) 7%,
+      var(--lighter-gray) 0,
+      var(--lighter-gray) 93%
+    );
+  }
+
+  .video-content {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .thumbnail {
+    width: 100% !important;
+  }
+
+  .video-text {
+    width: 100%;
+  }
+
+  .video-text button {
+    margin: 0 auto 32px;
+  }
+
+  .video-content h2 {
+    margin: 40px 0 20px;
+  }
+
+  .video-container {
+    padding-bottom: 80%;
+  }
+}
+@media (max-width: 719px) {
+  .close-button {
+    top: 0;
+    right: -5px;
+  }
+
+  .close-button span {
+    font-size: 16px;
+  }
 }
