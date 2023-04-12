@@ -47,3 +47,15 @@ div.image p {
 div.image a {
   text-decoration: none;
 }
+
+@media (max-width: 1365px) {
+  div.account-section {
+    max-width: 100%;
+    margin: 0 16px;
+    padding-bottom: 64px;
+  }
+
+  div.image > div {
+    padding: 40px 16px;
+  }
+}
