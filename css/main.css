@@ -41,3 +41,9 @@ h3 {
   font-size: 40px;
   line-height: 100%;
 }
+
+@media (max-width: 1365px) {
+  .container {
+    margin: 0 16px;
+  }
+}

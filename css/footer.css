@@ -29,3 +29,30 @@ div.footer-top {
 .footer p > a {
   text-decoration: underline;
 }
+
+@media (max-width: 1365px) {
+  div.footer {
+    padding: 24px 0 40px;
+  }
+
+  div.footer-top {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: none;
+  }
+
+  div.social-icons {
+    margin-top: 24px;
+    padding-top: 28px;
+    border-top: 1px solid var(--lighter-blue);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer p {
+    text-align: center;
+    margin-top: 0px;
+  }
+}
