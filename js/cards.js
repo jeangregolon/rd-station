@@ -43,6 +43,14 @@ function renderCards() {
     cardsContainer &&
     (cardsContainer.offsetWidth > 0 || cardsContainer.offsetHeight > 0)
   ) {
+    const sliderWrapper = document.createElement('div');
+    sliderWrapper.classList.add('slider-wrapper');
+    cardsContainer.appendChild(sliderWrapper);
+
+    const slider = document.createElement('div');
+    slider.classList.add('slider');
+    sliderWrapper.appendChild(slider);
+
     for (let i = 0; i < cardsData.length; i++) {
       const card = document.createElement('div');
       card.classList.add('card');
@@ -63,7 +71,42 @@ function renderCards() {
       cardDescription.textContent = cardsData[i].description;
       card.appendChild(cardDescription);
 
-      cardsContainer.appendChild(card);
+      slider.appendChild(card);
+    }
+
+    const sliderDots = document.createElement('div');
+    sliderDots.classList.add('slider-dots');
+    sliderWrapper.appendChild(sliderDots);
+
+    const dotsContainer = document.querySelector('.slider-dots');
+    const cards = document.querySelectorAll('.card');
+
+    let currentCard = 0;
+
+    // Adiciona as bolinhas correspondentes ao número de cards
+    for (let i = 0; i < cards.length; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('slider-dot');
+      if (i === currentCard) {
+        dot.classList.add('active');
+      }
+      dot.addEventListener('click', () => {
+        changeCard(i);
+      });
+      dotsContainer.appendChild(dot);
+    }
+    // Função para alterar o card atual e a bolinha correspondente
+    function changeCard(index) {
+      cards[currentCard].classList.remove('active');
+      dotsContainer.children[currentCard].classList.remove('active');
+      currentCard = index;
+      cards[currentCard].classList.add('active');
+      dotsContainer.children[currentCard].classList.add('active');
+      cards[currentCard].scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
     }
   } else {
     window.requestAnimationFrame(renderCards);

@@ -53,6 +53,7 @@ div.image a {
     max-width: 100%;
     margin: 0 16px;
     padding-bottom: 64px;
+    height: 260px;
   }
 
   div.image > div {

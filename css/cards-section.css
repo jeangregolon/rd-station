@@ -9,7 +9,7 @@
   margin: 0 0 64px;
 }
 
-div#cards {
+div.slider {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -40,4 +40,61 @@ div.card h2 {
   font-size: 32px;
   line-height: 110%;
   margin: 16px 0;
+}
+
+@media (max-width: 1365px) {
+  div#cards {
+    position: relative;
+    padding: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  div.cards-section {
+    padding: 0 0 72px;
+  }
+
+  .cards-section h1 {
+    margin: 0 0 24px;
+  }
+
+  div.slider-wrapper {
+    overflow-x: hidden;
+  }
+
+  div.slider {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+  }
+
+  div.card {
+    width: 343px;
+    height: 344px;
+    flex-shrink: 0;
+    transition: all 600ms ease-in-out;
+  }
+
+  .slider-dots {
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .slider-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  .slider-dot.active {
+    background-color: var(--medium-blue);
+  }
 }
