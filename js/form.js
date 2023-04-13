@@ -37,25 +37,25 @@ function watchForm() {
           (!hasWebsiteNo.checked && !hasWebsiteYes.checked) ||
           (hasWebsiteYes.checked && !website.value)
         ) {
-          console.log('Por favor, preencha todos os campos.');
+          showToast('Por favor, preencha todos os campos.', 'warning');
           return;
         }
 
         //Verifica se o e-mail é valido
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-          console.log('Por favor, insira um e-mail válido.');
+          showToast('Por favor, insira um e-mail válido.', 'warning');
           return;
         }
 
         //Verifica se telefone tem número mínimo de dígitos
         if (phone.value.length < 14) {
-          console.log('Por favor, insira um telefone válido.');
+          showToast('Por favor, insira um telefone válido.', 'warning');
           return;
         }
 
         //Verifica se as senhas são iguais
         if (password.value !== confirmPassword.value) {
-          console.log('As senhas devem ser iguais.');
+          showToast('As senhas devem ser iguais.', 'warning');
           return;
         }
 
@@ -65,7 +65,10 @@ function watchForm() {
             password.value
           )
         ) {
-          console.log('Senha deve conter...');
+          showToast(
+            'A senha deve conter: <br> - De 6 a 10 caracteres <br> - Uma letra maiúscula <br> - Uma letra minúscula <br> - Um número',
+            'warning'
+          );
           return;
         }
 
@@ -76,7 +79,7 @@ function watchForm() {
             website.value
           )
         ) {
-          console.log('Por favor, insira um site válido.');
+          showToast('Por favor, insira um site válido.', 'warning');
           return;
         }
 
@@ -107,7 +110,7 @@ function watchForm() {
               form.classList.add('success');
               form.querySelector('#success-text').style.display = 'block';
             } else {
-              console.log('Erro ao realizar cadastro.');
+              showToast('Erro ao realizar cadastro.', 'error');
             }
           })
           .catch((error) => console.log(error));
@@ -161,6 +164,17 @@ function togglePasswordVisibility(fieldId, iconId) {
     icon.classList.remove('fa-eye-slash');
     icon.classList.add('fa-eye');
   }
+}
+
+function showToast(message, type) {
+  const toast = document.getElementById('toast');
+  toast.innerHTML = message;
+  toast.style.display = 'block';
+  toast.classList.add(type, 'progress');
+  setTimeout(() => {
+    toast.style.display = 'none';
+    toast.classList.remove(type, 'progress');
+  }, 3500);
 }
 
 watchForm();

@@ -239,6 +239,71 @@ div.radio-button label {
   cursor: pointer;
 }
 
+#toast {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0px 4px 12px rgba(33, 36, 41, 0.14);
+  display: none;
+  width: 300px;
+  animation: fadein 0.5s, fadeout 0.5s 3s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#toast.progress:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  animation: progress-bar 3s linear forwards;
+}
+
+@keyframes progress-bar {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+#toast.success {
+  background-color: #00a008;
+}
+
+#toast.warning {
+  background-color: #f9bd07;
+}
+
+#toast.error {
+  background-color: #f55a3b;
+}
+
 @media (max-width: 1365px) {
   div.form-section {
     background: linear-gradient(
