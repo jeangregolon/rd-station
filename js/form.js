@@ -71,6 +71,7 @@ function watchForm() {
 
         //Verifica se o site é valido
         if (
+          hasWebsiteYes.checked &&
           !/^(http:\/\/|https:\/\/)?([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$/i.test(
             website.value
           )
@@ -78,6 +79,38 @@ function watchForm() {
           console.log('Por favor, insira um site válido.');
           return;
         }
+
+        //Monta o body da requisição
+        const body = {
+          name: name.value,
+          email: email.value,
+          phone: phone.value,
+          position: position.value,
+          password: password.value,
+        };
+
+        if (website.value) {
+          body.website = website.value;
+        }
+
+        fetch('https://rdstation-signup-psel.herokuapp.com', {
+          method: 'POST',
+          //no-cors necessário para que a requisição não seja bloqueada pela política do CORS
+          mode: 'no-cors',
+          body: JSON.stringify(body),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              form.classList.add('success');
+              form.querySelector('#success-text').style.display = 'block';
+            } else {
+              console.log('Erro ao realizar cadastro.');
+            }
+          })
+          .catch((error) => console.log(error));
       }
     });
   } else {
