@@ -206,6 +206,22 @@ div.radio-button label {
   }
 }
 
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  width: calc(100% - 32px);
+}
+
+.password-field i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 @media (max-width: 1365px) {
   div.form-section {
     background: linear-gradient(

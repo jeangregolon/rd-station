@@ -36,33 +36,86 @@
 
         <div class="form-field">
           <label>Seu email de trabalho</label>
-          <input type="text" name="name" placeholder="Insira seu e-mail" />
+          <input type="text" name="email" placeholder="Insira seu e-mail" />
         </div>
 
         <div class="form-field">
           <label>Seu telefone</label>
           <input
             type="text"
-            name="name"
+            name="phone"
             placeholder="Insira seu número de telefone com DDD"
           />
         </div>
 
         <div class="form-field">
           <label>Seu cargo de ocupação</label>
-          <select>
-            <option>Selecione seu cargo</option>
+          <select id="position">
+            <option value="">Selecione seu cargo</option>
+            <option value="Sócio(a) / CEO / Proprietário(a)">
+              Sócio(a) / CEO / Proprietário(a)
+            </option>
+            <option value="Diretor(a) de Vendas">Diretor(a) de Vendas</option>
+            <option value="Diretor(a) de Marketing">
+              Diretor(a) de Marketing
+            </option>
+            <option value="Diretor(a) Outras Áreas">
+              Diretor(a) Outras Áreas
+            </option>
+            <option value="Gerente de Marketing">Gerente de Marketing</option>
+            <option value="Gerente de Vendas">Gerente de Vendas</option>
+            <option value="Coordenador(a)/Supervisor(a) de Marketing">
+              Coordenador(a)/Supervisor(a) de Marketing
+            </option>
+            <option value="Coordenador(a)/Supervisor(a) de Vendas">
+              Coordenador(a)/Supervisor(a) de Vendas
+            </option>
+            <option value="Analista/Assistente de Marketing">
+              Analista/Assistente de Marketing
+            </option>
+            <option value="Analista/Assistente de Vendas">
+              Analista/Assistente de Vendas
+            </option>
+            <option value="Vendedor(a) / Executivo(a) de Contas">
+              Vendedor(a) / Executivo(a) de Contas
+            </option>
+            <option value="Estudante">Estudante</option>
+            <option value="Outros Cargos">Outros Cargos</option>
           </select>
         </div>
 
         <div class="form-field">
           <label>Crie uma senha</label>
-          <input type="password" name="name" placeholder="Insira uma senha" />
+          <div class="password-field">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Insira uma senha"
+            />
+            <i
+              class="fas fa-eye"
+              id="password-icon"
+              onclick="togglePasswordVisibility('password', 'password-icon')"
+            ></i>
+          </div>
         </div>
 
         <div class="form-field">
           <label>Confirme sua senha</label>
-          <input type="password" name="name" placeholder="Repita sua senha" />
+          <div class="password-field">
+            <input
+              type="password"
+              name="confirm-password"
+              id="confirm-password"
+              placeholder="Repita sua senha"
+            />
+            <i
+              class="fas fa-eye"
+              id="confirm-password-icon"
+              onclick="togglePasswordVisibility('confirm-password', 'confirm-password-icon')"
+            ></i>
+          </div>
         </div>
 
         <div class="form-field">
@@ -71,20 +124,25 @@
             <input
               class
               type="radio"
-              id="html"
-              name="fav_language"
-              value="HTML"
+              id="hasWebsiteYes"
+              name="hasWebsite"
+              value="yes"
             />
-            <label for="html">Meu site é</label><br />
+            <label for="hasWebsite">Meu site é</label><br />
           </div>
           <input
             type="text"
-            name="name"
+            name="website"
             placeholder="Insira o endereço do seu site"
           />
           <div class="radio-button">
-            <input type="radio" id="html" name="fav_language" value="HTML" />
-            <label for="html">Ainda não tenho site</label><br />
+            <input
+              type="radio"
+              id="hasWebsiteNo"
+              name="hasWebsite"
+              value="no"
+            />
+            <label for="hasWebsite">Ainda não tenho site</label><br />
           </div>
         </div>
 
