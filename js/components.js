@@ -49,3 +49,8 @@ const footerElement = document.querySelector('footer');
 if (footerElement) {
   includeHTML(footerElement, 'components/footer.html');
 }
+
+const toastElement = document.querySelector('#info-toast');
+if (toastElement) {
+  includeHTML(toastElement, 'components/toast.html');
+}
